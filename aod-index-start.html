@@ -146,12 +146,12 @@
         <h1 class="aod-hero-h1"> 
           Hey, I'm Thandeka
         </h1> 
+
         
-        <!-- Option M — Weight contrast stacked reveal -->
-        <div class="hero-stacked" id="heroStacked" aria-live="polite">
-          <div class="hero-stacked__clip"><span class="hero-stacked__line hero-stacked__line--light" id="hs-line1"></span></div>
-          <div class="hero-stacked__clip"><span class="hero-stacked__line hero-stacked__line--bold"  id="hs-line2"></span></div>
-          <div class="hero-stacked__clip"><span class="hero-stacked__line hero-stacked__line--light" id="hs-line3"></span></div>
+        <div class="hero-blur" aria-live="polite">
+          
+          
+          <p class="hero-blur__phrase" id="heroBlurPhrase"></p>
         </div>
 
       </div>
@@ -161,7 +161,7 @@
 </section>
 <!-- ====================== HERO ====================== -->
 
-<!-- ====================== STATS BAND ====================== -->
+<!-- ====================== STATS BAND ====================== --
 <section class="aod-stats-band">
   <div class="aod-container">
     <div class="aod-stats-row">
@@ -193,7 +193,7 @@
     <!-- Section label + card grid -->
     <div class="aod-row section-block-lg">
       <div class="aod-col-12">
-        <span class="aod-section-label">Featured case studies</span>
+        <span class="aod-section-label" style="text-align: center;">Featured case studies</span>
       </div>
     </div>
 
@@ -308,53 +308,31 @@
     });
   });
 
-  /* ── Option M — Stacked weight-contrast reveal ── */
+  /* ── Option E — Blur reveal, random phrase per page load. No cycling. ── */
   (function () {
-    // Each phrase is split into 3 lines: [light, BOLD, light]
     const PHRASES = [
-      ['I help businesses', 'turn complex systems', 'into simple, intuitive products.'],
-      ['I love', 'vanquishing wicked problems', 'that hamper progress.'],
-      ['I craft', 'meaningful experiences', 'for digital products.'],
+      "I help businesses turn complex systems into simple, intuitive products.",
+      "I love vanquishing wicked problems.",
+      "I craft meaningful experiences for digital products.",
     ];
 
-    const line1 = document.getElementById('hs-line1');
-    const line2 = document.getElementById('hs-line2');
-    const line3 = document.getElementById('hs-line3');
-    const lines = [line1, line2, line3];
+    const el = document.getElementById('heroBlurPhrase');
+    if (!el) return;
 
-    let index = 0;
-    const HOLD = 4500;   // ms to display before cycling
-    const STAGGER = 160; // ms between each line animating in
+    // Pick a random phrase — different every page load / revisit
+    const phrase = PHRASES[Math.floor(Math.random() * PHRASES.length)];
+    el.textContent = phrase;
 
-    function show() {
-      const phrase = PHRASES[index];
-
-      // Reset all lines
-      lines.forEach(l => {
-        l.classList.remove('hero-stacked__line--visible');
-        l.textContent = '';
-      });
-
-      // Small delay to let reset settle, then set text and animate in staggered
-      setTimeout(() => {
-        phrase.forEach((text, i) => {
-          lines[i].textContent = text;
-          setTimeout(() => lines[i].classList.add('hero-stacked__line--visible'), i * STAGGER);
-        });
-      }, 80);
-
-      index = (index + 1) % PHRASES.length;
-    }
-
-    show();
-    setInterval(show, HOLD);
+    // Trigger blur-in on next frame so CSS transition fires
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => el.classList.add('hero-blur__phrase--visible'));
+    });
   })();
 
   const html         = document.documentElement;
   const themeBtn     = document.getElementById('theme-toggle');
   const STORAGE_KEY  = 'aod-theme';
 
-  // Restore saved preference, or detect OS preference
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) {
     html.setAttribute('data-theme', saved);
