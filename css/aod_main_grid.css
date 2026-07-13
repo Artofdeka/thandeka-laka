@@ -1402,8 +1402,9 @@ html {
 
 @media (max-width: 767px) {
   .aod-hero-h1 {
-    letter-spacing: 1px;
-    margin-bottom: var(--aod-space-1); /* 8px on mobile */
+    font-size: 44px;
+    letter-spacing: -1px;
+    margin-bottom: var(--aod-space-1);
   }
 }
 
@@ -1743,7 +1744,6 @@ body {
 .aod-h3 { margin-bottom: var(--aod-space-text-sm); }
 
 .aod-h1 { line-height: var(--aod-lh-tight-1); }
-.aod-line-height { line-height: var(--aod-lh-tight-1); }
 
 .aod-h1 { font-family: "futura-pt-condensed", sans-serif; font-weight: 700; }
 
@@ -1757,7 +1757,14 @@ body {
   color: #555555; /* darker in dark mode to maintain legibility */
 }
 
-/* Case study header — use Futura to match the rest of the site, scoped so other .aod-h1 uses elsewhere stay untouched */
+@media (max-width: 767px) {
+  .case-study-header .aod-hero-h1 {
+    font-size: clamp(36px, 18vw, 96px); /* fluid — scales to fill the grid */
+    letter-spacing: 1px;
+    line-height: 0.9;
+    max-width: 100% !important; /* override the inline max-width */
+  }
+}
 .case-study-header .aod-h1 {
   font-family: "futura-pt-condensed", sans-serif;
   font-weight: 700;
@@ -1802,7 +1809,7 @@ body {
 .aod-h2,
 .aod-h3,
 .aod-h4 {
-  line-height: var(--aod-lh-tight-1);
+  line-height: var(--aod-lh-heading);
   font-family: "futura-pt-condensed", sans-serif;
   font-weight: 700;
 }
@@ -3159,6 +3166,60 @@ body {
   .aod-accordion-media__visual {
     position: static;
     order: -1; /* image appears above the accordion on mobile */
+  }
+}
+
+/* =========================
+   VISION GRID — numbered 3-column layout
+========================= */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  border-top: 1px solid var(--aod-color-border);
+  padding-top: 32px;
+  transition: border-color 0.3s ease;
+}
+
+.vision-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vision-item__num {
+  font-family: inherit; /* keeps existing font, per brief */
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--aod-color-accent-2); /* brand red */
+  transition: color 0.3s ease;
+}
+
+.vision-item__title {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--aod-color-text);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.vision-item__body {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--aod-color-muted);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
@@ -5396,7 +5457,7 @@ li {
 
 .carousel-card p {
   padding: 0 16px 8px 16px;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--aod-color-text);
   margin-top: 16px;
 }
@@ -6574,7 +6635,6 @@ padding: 24px;
     padding-bottom: var(--aod-space-5);
   }
 }
-
 
 
 
