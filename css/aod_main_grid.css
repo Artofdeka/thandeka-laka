@@ -536,6 +536,7 @@ html {
 
 /* Tablet (768px–1199px): 32px gutters — more breathing room */
 @media (max-width: 1199px) and (min-width: 768px) {
+  :root { --aod-gutter: 32px; }
   .aod-container {
     padding-left: 32px;
     padding-right: 32px;
@@ -544,6 +545,7 @@ html {
 
 /* Large phone (480px–767px): 24px gutters */
 @media (max-width: 767px) and (min-width: 481px) {
+  :root { --aod-gutter: 24px; }
   .aod-container {
     padding-left: 24px;
     padding-right: 24px;
@@ -552,6 +554,7 @@ html {
 
 /* Small phone (≤480px): 20px gutters — tightest, but still breathable */
 @media (max-width: 480px) {
+  :root { --aod-gutter: 20px; }
   .aod-container {
     padding-left: 20px;
     padding-right: 20px;
@@ -567,14 +570,11 @@ html {
 .aod-row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(var(--aod-gutter) / -2);
-  margin-right: calc(var(--aod-gutter) / -2);
+  gap: var(--aod-gutter);
 }
 
-/* Columns */
+/* Columns — no side padding needed since row uses gap */
 [class*="aod-col-"] {
-  padding-left: calc(var(--aod-gutter) / 2);
-  padding-right: calc(var(--aod-gutter) / 2);
   box-sizing: border-box;
 }
 
@@ -1327,41 +1327,49 @@ html {
    LEGACY NAV SYSTEM (TO REVIEW)
 ========================================= */
 
-.aod-section {
-  padding-top: var(--aod-space-section-lg);
-  padding-bottom: var(--aod-space-section-lg);
-}
-.aod-section-xs {
-  padding-top: var(--aod-space-section-xs);
-  padding-bottom: var(--aod-space-section-xs);
-}
-.aod-section-sm {
-  padding-top: var(--aod-space-section-sm);
-  padding-bottom: var(--aod-space-section-sm);
-}
-.aod-section-md {
-  padding-top: var(--aod-space-section-md);
-  padding-bottom: var(--aod-space-section-md);
-}
-.aod-section-lg {
-  padding-top: var(--aod-space-section-xl);
-  padding-bottom: var(--aod-space-section-xl);
-}
-.aod-section-xl {
-  padding-top: var(--aod-space-section-xl);    /* 96px */
-  padding-bottom: var(--aod-space-section-xl);
-}
-.aod-section-xxl {
-  padding-top: var(--aod-space-section-xxl);    /* 96px */
-  padding-bottom: var(--aod-space-section-xxl);
+/* =========================
+   SECTION SPACING
+   Single source of truth. padding-block = padding-top + padding-bottom.
+   Desktop values → scale down at 767px and 480px.
+
+   xs   →  32px
+   sm   →  48px
+   base →  64px
+   md   →  64px
+   lg   →  80px
+   xl   →  96px
+   xxl  → 128px
+========================= */
+.aod-section-xs  { padding-block: 32px; }
+.aod-section-sm  { padding-block: 48px; }
+.aod-section     { padding-block: 64px; }
+.aod-section-md  { padding-block: 64px; }
+.aod-section-lg  { padding-block: 80px; }
+.aod-section-xl  { padding-block: 96px; }
+.aod-section-xxl { padding-block: 128px; }
+
+/* Tablet / large phone — step each size down one level */
+@media (max-width: 767px) {
+  .aod-section-xs  { padding-block: 24px; }
+  .aod-section-sm  { padding-block: 32px; }
+  .aod-section     { padding-block: 48px; }
+  .aod-section-md  { padding-block: 48px; }
+  .aod-section-lg  { padding-block: 64px; }
+  .aod-section-xl  { padding-block: 64px; }
+  .aod-section-xxl { padding-block: 80px; }
 }
 
-
-
-/* Reduce visual harshness between sections */
-.aod-section, .aod-section-sm, .aod-section-md, .aod-section-lg, .aod-section-xl {
-  border-top: 1px solid rgba(255,255,255,0.03);
+/* Small phone — step down again */
+@media (max-width: 480px) {
+  .aod-section-xs  { padding-block: 16px; }
+  .aod-section-sm  { padding-block: 24px; }
+  .aod-section     { padding-block: 32px; }
+  .aod-section-md  { padding-block: 32px; }
+  .aod-section-lg  { padding-block: 48px; }
+  .aod-section-xl  { padding-block: 48px; }
+  .aod-section-xxl { padding-block: 64px; }
 }
+
 
 
 .aod-stack-md > * + * {
@@ -1392,7 +1400,7 @@ html {
   font-style: normal;
   font-size: clamp(28px, 10.8vw, 160px);
   white-space: nowrap;
-  line-height: var(--aod-lh-tight);
+  line-height: 1; /* desktop */
   color: var(--aod-color-text);
   margin-bottom: 0;
   letter-spacing: -6px;
@@ -1404,7 +1412,33 @@ html {
   .aod-hero-h1 {
     font-size: 44px;
     letter-spacing: -1px;
+    line-height: 1;
     margin-bottom: var(--aod-space-1);
+  }
+}
+
+/* Case study hero title — self-contained, no dependency on aod-hero-h1 */
+.case-hero-title {
+  font-family: "futura-pt-condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: clamp(44px, 6.5vw, 96px);
+  letter-spacing: -3px;
+  line-height: 1;
+  white-space: normal;
+  text-align: center;
+  color: var(--aod-color-text);
+  margin-bottom: 0;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .case-hero-title {
+    letter-spacing: -1px;
   }
 }
 
@@ -1770,7 +1804,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -3px;
-  font-size: clamp(36px, 6.5vw, 76px); /* slightly bigger than the 60px base */
+  font-size: clamp(44px, 6.5vw, 76px); /* slightly bigger than the 60px base */
   line-height: 1; /* removes the extra line-spacing */
   text-align: center;
 }
@@ -5868,6 +5902,28 @@ padding: 24px;
   padding-left: 0;
 }
 
+/* 4-column grid inside case-meta-card */
+.case-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.case-meta-grid__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .case-meta-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .case-meta-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
 /* META CARD — dark rounded container wrapping the case study info row */
 .case-meta-card {
   background: #161616;
@@ -5995,89 +6051,6 @@ padding: 24px;
   display: block;
   color: inherit;
   text-decoration: none;
-}
-
-/* =========================
-   SECTION RESPONSIVE PADDING
-   Full breakpoint ladder — every section class scales down gracefully.
-   aod-section-xl is the hero/main section so it gets the most attention.
-========================= */
-
-/* ── aod-section-xl ── */
-/* Desktop (1200px+): 96px top/bottom — stepped down 16px from 112px */
-.aod-section-xl {
-  padding-top: var(--aod-space-section-xl);   /* 96px */
-  padding-bottom: var(--aod-space-section-xl);
-}
-/* Large desktop down to tablet landscape (993–1199px) */
-@media (max-width: 1199px) {
-  .aod-section-xl {
-    padding-top: var(--aod-space-section-xl);  /* 96px */
-    padding-bottom: var(--aod-space-section-xl);
-  }
-}
-/* Tablet portrait (768–992px) */
-@media (max-width: 992px) {
-  .aod-section-xl {
-    padding-top: var(--aod-space-section-lg);  /* 80px */
-    padding-bottom: var(--aod-space-section-lg);
-  }
-}
-/* Large phone (481–767px) */
-@media (max-width: 767px) {
-  .aod-section-xl {
-    padding-top: var(--aod-space-section-md);  /* 64px */
-    padding-bottom: var(--aod-space-section-md);
-  }
-}
-/* Small phone (≤480px) */
-@media (max-width: 480px) {
-  .aod-section-xl {
-    padding-top: var(--aod-space-section-sm);  /* 48px */
-    padding-bottom: var(--aod-space-section-sm);
-  }
-}
-
-/* ── aod-section-lg ── */
-@media (max-width: 992px) {
-  .aod-section-lg {
-    padding-top: var(--aod-space-section-md);  /* 64px */
-    padding-bottom: var(--aod-space-section-md);
-  }
-}
-@media (max-width: 767px) {
-  .aod-section-lg {
-    padding-top: var(--aod-space-section-sm);  /* 48px */
-    padding-bottom: var(--aod-space-section-sm);
-  }
-}
-@media (max-width: 480px) {
-  .aod-section-lg {
-    padding-top: var(--aod-space-section-xs);  /* 32px */
-    padding-bottom: var(--aod-space-section-xs);
-  }
-}
-
-/* ── aod-section-md ── */
-@media (max-width: 767px) {
-  .aod-section-md {
-    padding-top: var(--aod-space-section-sm);  /* 48px */
-    padding-bottom: var(--aod-space-section-sm);
-  }
-}
-@media (max-width: 480px) {
-  .aod-section-md {
-    padding-top: var(--aod-space-section-xs);  /* 32px */
-    padding-bottom: var(--aod-space-section-xs);
-  }
-}
-
-/* ── aod-section-sm ── */
-@media (max-width: 767px) {
-  .aod-section-sm {
-    padding-top: var(--aod-space-section-xs);  /* 32px */
-    padding-bottom: var(--aod-space-section-xs);
-  }
 }
 
 /* ── section-block-lg (card grid top margin) ── */
