@@ -234,7 +234,7 @@
       <!-- ================================================= SUMMARY ============================================= --> 
       
       <!-- ========================================== THE PROBLEM ========================================== -->
-      <section class="aod-section-lg">
+      <section class="aod-section-xl">
         <div class="aod-container">
           
           <!-- Header -->
@@ -278,7 +278,7 @@
       <!-- ========================================== THE PROBLEM ========================================== -->
       
       <!-- =================================== MY ROLE &amp; CONTRIBUTION =================================== -->
-      <section class="aod-section-lg">
+      <section class="aod-section-xl">
         <div class="aod-container">
           
           <!-- Header -->
@@ -328,12 +328,12 @@
 
       <!-- ======================== HERO IMAGE ========================= -->
       <section class="case-hero-image-section">
-        <img src="img/casestudies/absa/income_verification/manual.png" class="case-hero-image" alt="Income verification hero" />
+        <img src="img/casestudies/absa/dea/credit-lending-as-is.webp" class="case-hero-image" alt="Income verification hero" />
       </section>
       <!-- ======================== HERO IMAGE ========================= -->
 
       <!-- ======================= THE DISCOVERY ======================= -->
-      <section class="aod-section-xl">
+      <section class="aod-section-lg">
         <div class="aod-container">
           
           <!-- Header -->
@@ -353,128 +353,87 @@
           <div class="aod-row section-block-sm">
             <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
 
-              <div class="ov-tabs" role="tablist">
-                <button class="ov-tab ov-tab--active" role="tab" data-tab="context"> Input Variability </button>
-                <button class="ov-tab" role="tab" data-tab="challenge"> System Failures </button>
-                <button class="ov-tab" role="tab" data-tab="role"> Delayed Feedback </button>
-                <button class="ov-tab" role="tab" data-tab="opportunity"> No Recovery Path </button>
-              </div>
-              <div class="ov-tabs-rule"></div>
+              <div class="apple-seg" role="tablist">
 
+                <button class="apple-seg__btn apple-seg__btn--active" role="tab" data-tab="context">
+                  <svg class="apple-seg__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M8 12h8M8 8h8M8 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="apple-seg__label">Input Variability</span>
+                </button>
+
+                <button class="apple-seg__btn" role="tab" data-tab="challenge">
+                  <svg class="apple-seg__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="apple-seg__label">System Failures</span>
+                </button>
+
+                <button class="apple-seg__btn" role="tab" data-tab="role">
+                  <svg class="apple-seg__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                  <span class="apple-seg__label">Delayed Feedback</span>
+                </button>
+
+                <button class="apple-seg__btn" role="tab" data-tab="opportunity">
+                  <svg class="apple-seg__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="apple-seg__label">No Recovery Path</span>
+                </button>
+
+              </div>
+
+              <!-- Panels — one per tab, matched via data-panel attribute -->
               <div class="ov-panels">
 
                 <div class="ov-panel ov-panel--active" data-panel="context">
                   <div class="aod-card-border">
-                    <h3 class="aod-label"> High Input Variability </h3>
-                    <p class="aod-body">
-                      Customers submitted documents in different formats, qualities, and structures. 
-                      Many submissions were incomplete or unsuitable for automated processing.
-                    </p>
+                    <p class="aod-label-lg">Input Variability</p>
+                    <p class="aod-body-lg section-block-xs aod-fw-semibold-600">Customers submitted documents in different formats, qualities, and structures.
+                    Many submissions were incomplete or unsuitable for automated processing.</p>
                   </div>
-                  <!-- <p class="aod-body-lg">
-                    Customers submitted documents in different formats, qualities, and structures. 
-                      Many submissions were incomplete or unsuitable for automated processing.
-                  </p> -->
                 </div>
 
                 <div class="ov-panel" data-panel="challenge">
                   <div class="aod-card-border">
-                    <h3 class="aod-label"> System Interpretation Failures </h3>
-                    <p class="aod-body">
-                      Verification technologies and validation rules struggled to consistently interpret uploaded information, resulting in failed verifications and unnecessary referrals.
-                    </p>
+                    <p class="aod-label-lg">System Failures</p>
+                    <p class="aod-body-lg section-block-xs aod-fw-semibold-600">Verification technologies and validation rules struggled to consistently interpret uploaded
+                    information, resulting in failed verifications and unnecessary referrals.</p>
                   </div>
-                  <!-- <p class="aod-body-lg">
-                    Verification technologies and validation rules struggled to consistently interpret uploaded information, resulting in failed verifications and unnecessary referrals.
-                  </p> -->
                 </div>
 
                 <div class="ov-panel" data-panel="role">
                   <div class="aod-card-border">
-                    <h3 class="aod-label"> Delayed Feedback </h3>
-                    <p class="aod-body">
-                      Errors were often identified after submission, creating lengthy delays before customers understood what had gone wrong.
-                    </p>
+                    <p class="aod-label-lg">Delayed Feedback</p>
+                    <p class="aod-body-lg section-block-xs aod-fw-semibold-600">Errors were often identified after submission, creating lengthy delays before customers
+                    understood what had gone wrong.</p>
                   </div>
-                  <!-- <p class="aod-body-lg">Working alongside process engineering, business analysis, and architecture teams, I led the experience strategy and service design effort to rethink how income verification operated within the credit journey.</p> -->
                 </div>
 
                 <div class="ov-panel" data-panel="opportunity">
                   <div class="aod-card-border">
-                    <h3 class="aod-label"> No Predictable Recovery Path </h3>
-                    <p class="aod-body">
-                      When verification failed, customers were frequently required to restart steps, resubmit documentation, or seek assistance through support channels.
-                    </p>
-                    <p class="aod-body">This created a recurring failure loop:</p>
-                    <p class="aod-body aod-fw-bold-700">
-                      Submit → Validation Failure → Delayed Feedback → Resubmission
-                    </p>
-                    <p class="aod-body"> A process that increased customer effort while simultaneously increasing operational workload. </p>
+                    <p class="aod-label-lg">No Recovery Path</p>
+                    <p class="aod-body-lg section-block-xs aod-fw-semibold-600">When verification failed, customers were frequently required to restart steps, resubmit
+                    documentation, or seek assistance through support channels.</p>
                   </div>
-                  <!-- <p class="aod-body-lg">Rather than treating verification as a document-upload challenge, we reframed it as a broader service and systems problem involving customer behaviour, operational processes, compliance requirements, and technology constraints.</p> -->
                 </div>
 
-              </div>
-
-            </div>
-          </div>
-          
-          <!-- Insight → Decision Rows
-          <div class="aod_row aod_decision-row section-block-md">
-            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
-
-              <div class="aod-row">
-                <div class="aod-col-12 aod-col-md-6">
-                  <div class="aod-card-border">
-                    <h3 class="aod-label"> High Input Variability </h3>
-                    <p class="aod-body">
-                      Customers submitted documents in different formats, qualities, and structures. 
-                      Many submissions were incomplete or unsuitable for automated processing.
-                    </p>
-                  </div>
-                </div>
-                <div class="aod-col-12 aod-col-md-6">
-                  <div class="aod-card-border">
-                    <h3 class="aod-label"> System Interpretation Failures </h3>
-                    <p class="aod-body">
-                      Verification technologies and validation rules struggled to consistently interpret uploaded information, resulting in failed verifications and unnecessary referrals.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="aod-row section-block-sm">
-                <div class="aod-col-12 aod-col-md-6">
-                  <div class="aod-card-border">
-                    <h3 class="aod-label"> Delayed Feedback </h3>
-                    <p class="aod-body">
-                      Errors were often identified after submission, creating lengthy delays before customers understood what had gone wrong.
-                    </p>
-                  </div>
-                </div>
-                <div class="aod-col-12 aod-col-md-6">
-                  <div class="aod-card-border">
-                    <h3 class="aod-label"> No Predictable Recovery Path </h3>
-                    <p class="aod-body">
-                      When verification failed, customers were frequently required to restart steps, resubmit documentation, or seek assistance through support channels.
-                    </p>
-                    <p class="aod-body">This created a recurring failure loop:</p>
-                    <p class="aod-body aod-fw-bold-700">
-                      Submit → Validation Failure → Delayed Feedback → Resubmission
-                    </p>
-                    <p class="aod-body"> A process that increased customer effort while simultaneously increasing operational workload. </p>
-                  </div>
-                </div>
               </div>
               
             </div>
-          </div> -->
+          </div>
           
         </div>
       </section>
       <!-- ======================= THE DISCOVERY ======================= -->
-      
-      <!-- ======================= KEY INSIGHTS ======================== -->
-      <section class="aod-section-xl">
+        
+      <!-- ======================= THE DISCOVERY ======================== -->
+      <section class="aod-section-lg">
         <div class="aod-container">
           <!-- Header -->
           <div class="aod_row">
@@ -483,53 +442,51 @@
               <h1 class="aod-h1 aod-text-uppercase"> 
                  Key Research Insight
               </h1>
-              <p class="aod-body-xl section-block-md">
+              <p class="aod-body-xl section-block-lg">
                 Through stakeholder interviews, journey analysis, operational reviews, and usability testing, three critical insights emerged: </p>
             </div>
           </div>
 
-          <!-- Insight → Decision — two columns: insights left, responses right -->
+          <!-- Insight → Design Response pairs -->
           <div class="aod_row aod_mt-lg aod_decision-row">
             <div class="aod-col-12 aod-col-md-10 aod-offset-md-1">
 
               <div class="sticky-board">
 
-                <!-- Left column — all insights -->
-                <div class="sticky-board__col">
-                  <div class="sticky-note sticky-note--yellow sticky-note--tilt-l">
-                    <div class="sticky-note__tape"></div>
-                    <p class="sticky-note__label">Insight 1</p>
-                    <p class="sticky-note__body">Customers were often unsure which documents were acceptable and how they should be submitted.</p>
-                  </div>
-                  <div class="sticky-note sticky-note--sky sticky-note--tilt-r">
-                    <div class="sticky-note__tape"></div>
-                    <p class="sticky-note__label">Insight 2</p>
-                    <p class="sticky-note__body">The journey felt unpredictable, with customers unsure of what would happen next or how far they were from completion.</p>
-                  </div>
-                  <div class="sticky-note sticky-note--pink sticky-note--tilt-l">
-                    <div class="sticky-note__tape"></div>
-                    <p class="sticky-note__label">Insight 3</p>
-                    <p class="sticky-note__body">Errors were discovered too late, making correction time-consuming and frustrating.</p>
-                  </div>
+                <!-- Pair 1 -->
+                <div class="sticky-note sticky-note--yellow sticky-note--tilt-l">
+                  <div class="sticky-note__tape"></div>
+                  <p class="sticky-note__label">Insight 1</p>
+                  <p class="sticky-note__body">Customers were often unsure which documents were acceptable and how they should be submitted.</p>
+                </div>
+                <div class="sticky-note sticky-note--green sticky-note--tilt-r">
+                  <div class="sticky-note__tape"></div>
+                  <p class="sticky-note__label">Design Response</p>
+                  <p class="sticky-note__body">Provide clearer guidance, examples, and contextual support throughout the verification process.</p>
                 </div>
 
-                <!-- Right column — all design responses -->
-                <div class="sticky-board__col">
-                  <div class="sticky-note sticky-note--green sticky-note--tilt-r">
-                    <div class="sticky-note__tape"></div>
-                    <p class="sticky-note__label">Design Response</p>
-                    <p class="sticky-note__body">Provide clearer guidance, examples, and contextual support throughout the verification process.</p>
-                  </div>
-                  <div class="sticky-note sticky-note--green sticky-note--tilt-l">
-                    <div class="sticky-note__tape"></div>
-                    <p class="sticky-note__label">Design Response</p>
-                    <p class="sticky-note__body">Create a structured verification experience with clear progress indicators and predictable outcomes.</p>
-                  </div>
-                  <div class="sticky-note sticky-note--green sticky-note--tilt-r">
-                    <div class="sticky-note__tape"></div>
-                    <p class="sticky-note__label">Design Response</p>
-                    <p class="sticky-note__body">Introduce earlier validation and proactive feedback mechanisms to prevent errors before submission.</p>
-                  </div>
+                <!-- Pair 2 -->
+                <div class="sticky-note sticky-note--sky sticky-note--tilt-r">
+                  <div class="sticky-note__tape"></div>
+                  <p class="sticky-note__label">Insight 2</p>
+                  <p class="sticky-note__body">The journey felt unpredictable, with customers unsure of what would happen next or how far they were from completion.</p>
+                </div>
+                <div class="sticky-note sticky-note--green sticky-note--tilt-l">
+                  <div class="sticky-note__tape"></div>
+                  <p class="sticky-note__label">Design Response</p>
+                  <p class="sticky-note__body">Create a structured verification experience with clear progress indicators and predictable outcomes.</p>
+                </div>
+
+                <!-- Pair 3 -->
+                <div class="sticky-note sticky-note--pink sticky-note--tilt-l">
+                  <div class="sticky-note__tape"></div>
+                  <p class="sticky-note__label">Insight 3</p>
+                  <p class="sticky-note__body">Errors were discovered too late, making correction time-consuming and frustrating.</p>
+                </div>
+                <div class="sticky-note sticky-note--green sticky-note--tilt-r">
+                  <div class="sticky-note__tape"></div>
+                  <p class="sticky-note__label">Design Response</p>
+                  <p class="sticky-note__body">Introduce earlier validation and proactive feedback mechanisms to prevent errors before submission.</p>
                 </div>
 
               </div>
@@ -538,11 +495,127 @@
           </div>
         </div>
       </section>
-      <!-- ======================= KEY INSIGHTS ======================== -->
+      <!-- ======================= THE DISCOVERY ======================== -->
+      
+      <!-- ========================= DEEP DIVING ========================== -->
+      <section class="aod-section-lg">
+        <div class="aod-container">
+          
+          <!-- Header -->
+          <div class="aod_row">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+              <span class="aod-label-lg">The Discovery</span>
+              <h1 class="aod-h1 aod-text-uppercase"> 
+                 Deep diving
+              </h1>
+              <p class="aod-body-xl section-block-md">
+                We conducted multiple workshops to address key challenges and navigate constraints. We needed to thoroughly understand credit journeys, to integrate our capabilities effectively.
+              </p>
+              <p class="aod-body-xl"> As a result, we engaged in immersive sessions throughout the year with various teams as we advanced. </p>
+              
+            </div>
+          </div>
+          
+          <!-- Header -->
+          <div class="aod_row section-block-md">
+            <div class="aod-col-12 aod-col-md-10 aod-offset-md-1">
+              
+              <div class="scrolly-step">
+                <div class="aod-row editorial-grid">
+
+                  <!-- Article 1 -->
+                  <div class="aod-col-12 aod-col-md-4">
+                    <article class="editorial-card">
+                      <img src="img/casestudies/absa/dea/wa0016_01.png" class="editorial-image case-hero-image-2" />
+                    </article>
+                  </div>
+
+                  <!-- Article 2 -->
+                  <div class="aod-col-12 aod-col-md-4">
+                    <article class="editorial-card">
+                      <img src="img/casestudies/absa/dea/wa0020_02.png" class="editorial-image case-hero-image-2" />
+                    </article>
+                  </div>
+
+                  <!-- Article 3 -->
+                  <div class="aod-col-12 aod-col-md-4">
+                    <article class="editorial-card">
+                      <img src="img/casestudies/absa/dea/wa0021_03.png" class="editorial-image case-hero-image-2" />
+                    </article>
+                  </div>
+
+                </div>
+              </div>  
+
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <!-- ========================= DEEP DIVING ========================== -->
+      
+      <!-- ========================= TRAINING THE AI MODEL ========================== -->
+      <section class="aod-section-lg">
+        <div class="aod-container">
+
+          <div class="aod_row">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+              <span class="aod-label-lg"> Training the AI model </span>
+              <h1 class="aod-h1 aod-text-uppercase"> 
+                 Introducing EXL
+              </h1>
+              <p class="aod-body-xl section-block-md">
+                A key initiative involved partnering with EXL an AI model capable of extracting and analysing income data from bank statements.
+              </p>
+              <p class="aod-body-xl"> Alongside this, we helped shape a BTI (Bank Transactions Insights) portal, enabling consultants to manage credit applications. </p>
+              <p class="aod-body-xl">
+                We had limited time to prepare the BTI portal. Initially a tactical solution, the portal played a pivotal role in application processing and was strategically crucial during EXL's bank statement interpretation training phase.
+              </p>
+            </div>
+          </div>
+          
+          <div class="aod-row section-block-sm">
+            <div class="aod-col-12 case-video">
+              <video
+                class="aod_round_16 case-hero-image-2"
+                muted
+                autoplay
+                loop
+                playsinline
+                poster="img/casestudies/absa/bti/bti_portal_1.jpg"
+                src="video/absa/bti_portal.mp4"
+              ></video>
+            </div>
+          </div>
+          
+          <!-- Header -->
+          <div class="aod_row section-block-xs">
+            <div class="aod-col-12">
+              
+              <div class="scrolly-step">
+                <div class="aod-row editorial-grid">
+
+                    <article class="editorial-card">
+                      <img src="img/casestudies/absa/bti/bti_portal_8.jpg" alt="EXL BTI Portal" class="editorial-image case-hero-image-2" />
+                    </article>
+
+                    <article class="editorial-card">
+                      <img src="img/casestudies/absa/bti/bti_portal_9.jpg" alt="EXL BTI Portal" class="editorial-image case-hero-image-2" />
+                    </article>
+
+                </div>
+              </div>  
+
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      <!-- ========================= DEEP DIVING ========================== -->
       
       <!-- ======================== HERO IMAGE ========================= -->
       <section class="case-hero-image-section">
-        <img src="img/casestudies/absa/dea/credit-lending-as-is.webp" class="case-hero-image" alt="Income verification hero" />
+        <img src="img/casestudies/absa/income_verification/continuity_universal_clipboard__fmic8zmwi0ii_large_2x.jpg" class="case-hero-image" alt="Income verification hero" />
       </section>
       <!-- ======================== HERO IMAGE ========================= -->
 
@@ -1345,6 +1418,20 @@
         });
       })();
     </script>
+
+    <script>
+      document.querySelectorAll('.apple-seg__btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.tab;
+          document.querySelectorAll('.apple-seg__btn').forEach(b => b.classList.remove('apple-seg__btn--active'));
+          document.querySelectorAll('.ov-panel').forEach(p => p.classList.remove('ov-panel--active'));
+          btn.classList.add('apple-seg__btn--active');
+          const panel = document.querySelector(`.ov-panel[data-panel="${target}"]`);
+          if (panel) panel.classList.add('ov-panel--active');
+        });
+      });
+    </script>    
+    
   </body>
 </html>
 
