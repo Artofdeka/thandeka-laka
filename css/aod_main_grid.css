@@ -2161,7 +2161,7 @@ body {
 ========================= */
 
 .case-problem p {
-  color: #bdbdbd;
+  color: var(--aod-color-third-dark);
 }
 
 .case-problem-tags {
@@ -2425,7 +2425,7 @@ body {
 
 .editorial-grid {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 16px;
   align-items: flex-start;
 }
@@ -2441,6 +2441,7 @@ body {
 @media (max-width: 767px) {
   .editorial-grid {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 
