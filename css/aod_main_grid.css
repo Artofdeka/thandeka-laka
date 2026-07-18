@@ -3306,6 +3306,52 @@ body {
 }
 
 /* =========================
+   DESIGN VALIDATE ITERATE — two-column comparison grid
+========================= */
+.dvi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.dvi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dvi-card__image-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--aod-color-surface);
+}
+
+.dvi-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .dvi-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* =========================
+   BACKGROUND UTILITIES
+========================= */
+
+/* Deep black background — apply to any section */
+.aod-bg-black {
+  background-color: var(--aod-color-firstfirst_black);
+  transition: background-color 0.3s ease;
+}
+
+/* =========================
    REFRAME INTRO — centred Figtree lines
 ========================= */
 .reframe-intro {
