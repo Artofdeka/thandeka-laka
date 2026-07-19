@@ -29,7 +29,21 @@
       rel="stylesheet" />
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  </head>
+  <style>
+    .impact-seg { display: flex; flex-direction: column; gap: 32px; }
+    .impact-seg__controls { display: inline-flex; background: var(--aod-color-surface, #f4f4f4); border-radius: 999px; padding: 4px; gap: 2px; border: 1px solid var(--aod-color-border, #e2e2e2); }
+    .impact-seg__btn { background: none; border: none; cursor: pointer; padding: 10px 20px; border-radius: 999px; font-family: "futura-pt-condensed", sans-serif; font-weight: 600; font-size: 14px; color: #888; white-space: nowrap; transition: background 0.2s ease, color 0.2s ease; }
+    .impact-seg__btn:hover { color: #1a1a1a; }
+    .impact-seg__btn--active { background: #1a1a1a; color: #ffffff; }
+    .impact-seg__panel { display: none; }
+    .impact-seg__panel--active { display: block; animation: seg-fade 0.25s ease; }
+    @keyframes seg-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 560px) {
+      .impact-seg__controls { width: 100%; border-radius: 14px; flex-direction: column; }
+      .impact-seg__btn { width: 100%; text-align: left; border-radius: 10px; padding: 12px 16px; }
+    }
+  </style>
+</head>
   <body>
     <svg class="hide">
       <symbol id="artofdeka-sg" viewBox="0 0 94.09 55.34">
@@ -1113,6 +1127,155 @@
         </div>
       </section>
       <!-- ======================= THE DISCOVERY ======================= -->      
+
+      <!-- ===================== IMPACT — EDITORIAL BLOCKS ================ -->
+      <section class="case-problem aod-section">
+        <div class="aod-container">
+          <div class="aod-row">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+              <div class="aod-stack-xs">
+                <p class="aod-label">Results</p>
+                <h2 class="aod-h4">Impact</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="aod-row section-block-sm">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+
+              <div class="impact-editorial">
+
+                <div class="impact-editorial__row">
+                  <div class="impact-editorial__meta">
+                    <p class="impact-editorial__label">Customer</p>
+                    <p class="impact-editorial__count">4 outcomes</p>
+                  </div>
+                  <div class="impact-editorial__content">
+                    <p class="impact-editorial__headline">Reduced effort. Greater confidence. Fewer interruptions.</p>
+                    <p class="impact-editorial__body">Improved understanding of requirements throughout the application process — with far fewer referrals and manual interventions.</p>
+                  </div>
+                </div>
+
+                <div class="impact-editorial__row">
+                  <div class="impact-editorial__meta">
+                    <p class="impact-editorial__label">Operational</p>
+                    <p class="impact-editorial__count">4 outcomes</p>
+                  </div>
+                  <div class="impact-editorial__content">
+                    <p class="impact-editorial__headline">Less manual work. Fewer resubmissions. Better throughput.</p>
+                    <p class="impact-editorial__body">Reduced dependency on back-office verification, lower support volumes, and meaningfully improved processing efficiency.</p>
+                  </div>
+                </div>
+
+                <div class="impact-editorial__row impact-editorial__row--last">
+                  <div class="impact-editorial__meta">
+                    <p class="impact-editorial__label">Business</p>
+                    <p class="impact-editorial__count">4 outcomes</p>
+                  </div>
+                  <div class="impact-editorial__content">
+                    <p class="impact-editorial__headline">Higher completion. Faster decisions. Scalable onboarding.</p>
+                    <p class="impact-editorial__body">Increased STP capability and faster credit decisioning across digital channels — building a foundation for scalable onboarding.</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===================== IMPACT — EDITORIAL BLOCKS ================ -->
+
+      <!-- ===================== IMPACT AND OUTCOMES ====================== -->
+      <section class="case-problem aod-section-xl">
+        <div class="aod-container">
+          <div class="aod-row">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+              <div class="aod-stack-xs">
+                <p class="aod-label">Defining the Strategy</p>
+                <h2 class="aod-h4">Impact &amp; Outcomes</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Systemic bottlenecks -->
+          <div class="aod-row section-block-sm">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+              <div class="case-problem-content aod-stack-md">
+                <p class="aod-body-lg">
+                  The redesigned experience transformed income verification into a seamless, integrated part of the
+                  credit journey — improving both user experience and operational efficiency.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Segmented control — Impact -->
+          <div class="aod-row section-block-sm">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+
+              <div class="impact-seg">
+
+                <!-- Segmented control buttons -->
+                <div class="impact-seg__controls" role="tablist">
+                  <button class="impact-seg__btn impact-seg__btn--active" data-seg="customer" role="tab">Customer Impact</button>
+                  <button class="impact-seg__btn" data-seg="operational" role="tab">Operational Impact</button>
+                  <button class="impact-seg__btn" data-seg="business" role="tab">Business Impact</button>
+                </div>
+
+                <!-- Panels -->
+                <div class="impact-seg__panels">
+
+                  <div class="impact-seg__panel impact-seg__panel--active" data-seg-panel="customer">
+                    <ul class="aod-role-list">
+                      <li>Reduced effort during verification.</li>
+                      <li>Improved understanding of requirements.</li>
+                      <li>Increased confidence throughout the application process.</li>
+                      <li>Fewer interruptions and referrals.</li>
+                    </ul>
+                  </div>
+
+                  <div class="impact-seg__panel" data-seg-panel="operational">
+                    <ul class="aod-role-list">
+                      <li>Reduced dependency on manual verification activities.</li>
+                      <li>Fewer repeat submissions.</li>
+                      <li>Lower support and referral volumes.</li>
+                      <li>Improved processing efficiency.</li>
+                    </ul>
+                  </div>
+
+                  <div class="impact-seg__panel" data-seg-panel="business">
+                    <ul class="aod-role-list">
+                      <li>Improved application completion rates.</li>
+                      <li>Increased Straight-Through Processing capability.</li>
+                      <li>Faster credit decisioning.</li>
+                      <li>Greater scalability of digital onboarding channels.</li>
+                    </ul>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Clear understanding -->
+          <div class="aod-row section-block-md">
+            <div class="aod-col-12 aod-col-md-8 aod-offset-md-2">
+              <div class="case-problem-content aod-stack-md">
+                <p class="aod-body-lg">
+                  <span style="font-style: italic">
+                    By embedding verification into the core journey, the experience reduced friction, improved
+                    conversion, and enabled more efficient credit decisioning.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===================== IMPACT AND OUTCOMES ====================== -->
 
       <!-- ===================== IMPACT AND OUTCOMES ====================== -->
       <section class="aod-section">

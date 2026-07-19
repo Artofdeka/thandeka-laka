@@ -3345,10 +3345,52 @@ body {
    BACKGROUND UTILITIES
 ========================= */
 
-/* Deep black background — apply to any section */
+/* Deep black background — dark mode only, light grey in light mode */
 .aod-bg-black {
-  background-color: var(--aod-color-firstfirst_black);
+  background-color: #e8e8e8;
   transition: background-color 0.3s ease;
+}
+
+/* Light mode — dark text on light grey */
+.aod-bg-black,
+.aod-bg-black p,
+.aod-bg-black h1,
+.aod-bg-black h2,
+.aod-bg-black h3,
+.aod-bg-black h4,
+.aod-bg-black h5,
+.aod-bg-black h6 {
+  color: var(--aod-color-text);
+}
+
+.aod-bg-black .aod-label,
+.aod-bg-black .aod-label-lg,
+.aod-bg-black .case-eyebrow,
+.aod-bg-black .aod-color-muted {
+  color: var(--aod-color-muted);
+}
+
+/* Dark mode — near-black background, white text */
+[data-theme="dark"] .aod-bg-black {
+  background-color: var(--aod-color-firstfirst_black);
+}
+
+[data-theme="dark"] .aod-bg-black,
+[data-theme="dark"] .aod-bg-black p,
+[data-theme="dark"] .aod-bg-black h1,
+[data-theme="dark"] .aod-bg-black h2,
+[data-theme="dark"] .aod-bg-black h3,
+[data-theme="dark"] .aod-bg-black h4,
+[data-theme="dark"] .aod-bg-black h5,
+[data-theme="dark"] .aod-bg-black h6 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .aod-bg-black .aod-label,
+[data-theme="dark"] .aod-bg-black .aod-label-lg,
+[data-theme="dark"] .aod-bg-black .case-eyebrow,
+[data-theme="dark"] .aod-bg-black .aod-color-muted {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* =========================
